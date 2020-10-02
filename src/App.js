@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { Button } from  "@material-ui/core";
 
 function App() {
 
@@ -16,7 +17,9 @@ function App() {
       <h1>TODO</h1>
       <form>
         <input value={input} onChange={(e) => setInput(e.target.value)}/>
-        <button onClick={(e) => onClickHandler(e)}>Add TODO</button>
+        <Button disabled={!input} onClick={(e) => onClickHandler(e)} variant="contained" color="primary">
+          Add TODO
+        </Button>
       </form>
       <ul>
         {todos.map(todo => <li>{todo}</li>)}
