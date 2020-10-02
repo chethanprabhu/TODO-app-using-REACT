@@ -7,14 +7,17 @@ function App() {
   const [input, setInput] = useState('');
 
   const onClickHandler = (e) => {
+    e.preventDefault();
     setTodos([...todos, input]);
   }
 
   return (
     <div className="App">
       <h1>TODO</h1>
+      <form>
         <input value={input} onChange={(e) => setInput(e.target.value)}/>
         <button onClick={(e) => onClickHandler(e)}>Add TODO</button>
+      </form>
       <ul>
         {todos.map(todo => <li>{todo}</li>)}
       </ul>
