@@ -3,10 +3,21 @@ import './App.css';
 
 function App() {
 
+  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState('');
+
+  const onClickHandler = (e) => {
+    setTodos([...todos, input]);
+  }
+
   return (
     <div className="App">
-      <input/>
-      <button>Add TODO</button>
+      <h1>TODO</h1>
+        <input value={input} onChange={(e) => setInput(e.target.value)}/>
+        <button onClick={(e) => onClickHandler(e)}>Add TODO</button>
+      <ul>
+        {todos.map(todo => <li>{todo}</li>)}
+      </ul>
     </div>
   );
 }
