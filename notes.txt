@@ -1,0 +1,1 @@
+1) whenever u write a form, onSubmit is optional if it is a normal HTML button. But mandatory if it's a div button or maybe a third party button(like material UI button)
