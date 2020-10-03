@@ -37,7 +37,7 @@ function App() {
         <Button type="submit" disabled={!input} onClick={(e) => onClickHandler(e)} variant="contained" color="primary"> Add TODO </Button>
       </form>
       <ul>
-        {todos.map(todo => <Todo key={todos[todo]} todo={todo}/>)}
+        {todos.map(todo => <Todo key={todo.id} todo={todo}/>)}
       </ul>
     </div>
   );
